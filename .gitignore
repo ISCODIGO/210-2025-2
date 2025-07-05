@@ -1,0 +1,70 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# DotCover
+*.dotCover
+
+# Logs
+*.log
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# Publish Web Output
+*.Publish.xml
+*.pubxml
+*.publishproj
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# Visual Studio temporary files
+~$*
+*.tmp
+
+# Others
+*.vspscc
+*.vssscc
+*.cache
+*.dbmdl
+*.bak
+*.backup
+*.swp
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Local history for Visual Studio
+.localhistory/
+
+# IIS Express
+.vs/
