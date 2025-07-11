@@ -3,11 +3,11 @@ using S7;
 
 namespace GUI
 {
-    public partial class Form1 : Form
+    public partial class CuentaFrm : Form
     {
         private Cuenta CuentaObjeto { get; set; }
         private CultureInfo CultureHN { get; set; }
-        public Form1()
+        public CuentaFrm()
         {
             InitializeComponent();
             CuentaObjeto = new Cuenta(0);
@@ -17,10 +17,10 @@ namespace GUI
 
         private void RefrescarDatos()
         {
-            label3.Text = CuentaObjeto.Cliente;
-            label4.Text = CuentaObjeto.Saldo.ToString("C", CultureHN);
-            textBox1.Text = string.Empty;
-            textBox1.Focus();
+            ClienteLabel.Text = CuentaObjeto.Cliente;
+            SaldoLabel.Text = CuentaObjeto.Saldo.ToString("C", CultureHN);
+            MontoTexto.Text = string.Empty;
+            MontoTexto.Focus();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             // Deposito
-            decimal.TryParse(textBox1.Text, out decimal monto);
+            decimal.TryParse(MontoTexto.Text, out decimal monto);
             try
             {
                 CuentaObjeto.Depositar(monto);
@@ -49,7 +49,7 @@ namespace GUI
         private void button2_Click(object sender, EventArgs e)
         {
             // Retiro
-            decimal.TryParse(textBox1.Text, out decimal monto);
+            decimal.TryParse(MontoTexto.Text, out decimal monto);
             try
             {
                 CuentaObjeto.Retirar(monto);
@@ -61,18 +61,20 @@ namespace GUI
             RefrescarDatos();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void BtnEditarClienteClick(object sender, EventArgs e)
         {
             ClienteEditable.Visible = true;
             ClienteEditable.Text = CuentaObjeto.Cliente;
-            button4.Visible = true;
+            BtnEditarCliente.Enabled = false;
+            BtnGuardarCliente.Visible = true;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void BtnGuardarClienteClick(object sender, EventArgs e)
         {
             CuentaObjeto.Cliente = ClienteEditable.Text;
             ClienteEditable.Visible = false;
-            button4.Visible = false;
+            BtnEditarCliente.Enabled = true;
+            BtnGuardarCliente.Visible = false;
             RefrescarDatos();
         }
     }

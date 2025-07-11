@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            TxtNumero = new TextBox();
+            BtnAdivina = new Button();
             statusStrip1 = new StatusStrip();
-            intentosLabel = new ToolStripStatusLabel();
-            consejoLabel = new ToolStripStatusLabel();
-            listBox1 = new ListBox();
+            LblIntentos = new ToolStripStatusLabel();
+            LblConsejo = new ToolStripStatusLabel();
+            LstCandidatosFallidos = new ListBox();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,25 +49,25 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(84, 49);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(69, 27);
-            textBox1.TabIndex = 1;
+            TxtNumero.Location = new Point(84, 49);
+            TxtNumero.Name = "TxtNumero";
+            TxtNumero.Size = new Size(69, 27);
+            TxtNumero.TabIndex = 1;
             // 
             // button1
             // 
-            button1.Location = new Point(159, 48);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 3;
-            button1.Text = "Adivinar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            BtnAdivina.Location = new Point(159, 48);
+            BtnAdivina.Name = "BtnAdivina";
+            BtnAdivina.Size = new Size(94, 29);
+            BtnAdivina.TabIndex = 3;
+            BtnAdivina.Text = "Adivinar";
+            BtnAdivina.UseVisualStyleBackColor = true;
+            BtnAdivina.Click += BtnAdivinaClick;
             // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
-            statusStrip1.Items.AddRange(new ToolStripItem[] { intentosLabel, consejoLabel });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { LblIntentos, LblConsejo });
             statusStrip1.Location = new Point(0, 221);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(540, 26);
@@ -76,33 +76,33 @@
             // 
             // intentosLabel
             // 
-            intentosLabel.Name = "intentosLabel";
-            intentosLabel.Size = new Size(98, 20);
-            intentosLabel.Text = "intentosLabel";
+            LblIntentos.Name = "LblIntentos";
+            LblIntentos.Size = new Size(98, 20);
+            LblIntentos.Text = "intentosLabel";
             // 
             // consejoLabel
             // 
-            consejoLabel.Name = "consejoLabel";
-            consejoLabel.Size = new Size(96, 20);
-            consejoLabel.Text = "consejoLabel";
+            LblConsejo.Name = "LblConsejo";
+            LblConsejo.Size = new Size(96, 20);
+            LblConsejo.Text = "consejoLabel";
             // 
             // listBox1
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(293, 12);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(150, 184);
-            listBox1.TabIndex = 5;
+            LstCandidatosFallidos.FormattingEnabled = true;
+            LstCandidatosFallidos.Location = new Point(293, 12);
+            LstCandidatosFallidos.Name = "LstCandidatosFallidos";
+            LstCandidatosFallidos.Size = new Size(150, 184);
+            LstCandidatosFallidos.TabIndex = 5;
             // 
             // AdivinarNumero
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(540, 247);
-            Controls.Add(listBox1);
+            Controls.Add(LstCandidatosFallidos);
             Controls.Add(statusStrip1);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(BtnAdivina);
+            Controls.Add(TxtNumero);
             Controls.Add(label1);
             Name = "AdivinarNumero";
             Text = "AdivinarNumero";
@@ -116,11 +116,11 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox TxtNumero;
+        private Button BtnAdivina;
         private StatusStrip statusStrip1;
-        private ToolStripStatusLabel intentosLabel;
-        private ToolStripStatusLabel consejoLabel;
-        private ListBox listBox1;
+        private ToolStripStatusLabel LblIntentos;
+        private ToolStripStatusLabel LblConsejo;
+        private ListBox LstCandidatosFallidos;
     }
 }

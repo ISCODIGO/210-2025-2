@@ -19,9 +19,15 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            CuentaFrm form1 = new CuentaFrm();
             //form1.ShowDialog(this);
             form1.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdivinarNumero form2 = new AdivinarNumero();
+            form2.Show();
         }
     }
 }

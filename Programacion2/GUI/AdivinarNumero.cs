@@ -26,8 +26,8 @@ namespace GUI
 
         private void RefrescarPantalla()
         {
-            textBox1.Text = string.Empty;
-            intentosLabel.Text = $"Intentos: {Intentos}";
+            TxtNumero.Text = string.Empty;
+            LblIntentos.Text = $"Intentos: {Intentos}";
         }
 
         private void AdivinarNumero_Load(object sender, EventArgs e)
@@ -37,13 +37,13 @@ namespace GUI
             Intentos = INTENTOS_MAXIMO;
 
             RefrescarPantalla();
-            consejoLabel.Text = string.Empty;
+            LblConsejo.Text = string.Empty;
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnAdivinaClick(object sender, EventArgs e)
         {          
-            int.TryParse(textBox1.Text, out int candidato);
+            int.TryParse(TxtNumero.Text, out int candidato);
 
             if (candidato < NUMERO_MINIMO || candidato > NUMERO_MAXIMO)
             {
@@ -59,23 +59,23 @@ namespace GUI
             }
             else if (candidato < NumeroRandom)
             {
-                consejoLabel.Text = "Aumenta";
+                LblConsejo.Text = "Aumenta";
             }
             else
             {
-                consejoLabel.Text = "Disminuye";
+                LblConsejo.Text = "Disminuye";
             }
 
-            string resultado = $"{candidato}: {consejoLabel.Text}";
-            listBox1.Items.Add(resultado);
+            string resultado = $"{candidato}: {LblConsejo.Text}";
+            LstCandidatosFallidos.Items.Add(resultado);
             Intentos--;
             RefrescarPantalla();
-            textBox1.Focus();
+            TxtNumero.Focus();
 
             if (Intentos == 0)
             {
                 MessageBox.Show("Has perdido el juego");
-                button1.Enabled = false;
+                BtnAdivina.Enabled = false;
             }
         }
     }
