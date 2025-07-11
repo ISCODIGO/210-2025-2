@@ -15,57 +15,68 @@ namespace GUI
         private int NumeroRandom { get; set; }
         private int Intentos {  get; set; }
 
+        private const int NUMERO_MAXIMO = 100;
+        private const int NUMERO_MINIMO = 1;
+        private const int INTENTOS_MAXIMO = 10;
+
         public AdivinarNumero()
         {
             InitializeComponent();
-            
-
         }
 
         private void RefrescarPantalla()
         {
             textBox1.Text = string.Empty;
-            label2.Text = $"Intentos: {Intentos}";
+            intentosLabel.Text = $"Intentos: {Intentos}";
         }
 
         private void AdivinarNumero_Load(object sender, EventArgs e)
         {
             Random random = new Random();
-            NumeroRandom = random.Next(1, 101);  // random entre [1, 100]
-            Intentos = 10;
+            NumeroRandom = random.Next(NUMERO_MINIMO, NUMERO_MAXIMO + 1);  // random entre [1, 100]
+            Intentos = INTENTOS_MAXIMO;
 
-            label1.Text = $"Numero: {NumeroRandom}";
-            button1.Text = "Adivinar";
             RefrescarPantalla();
+            consejoLabel.Text = string.Empty;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            if (Intentos == 0)
+        {          
+            int.TryParse(textBox1.Text, out int candidato);
+
+            if (candidato < NUMERO_MINIMO || candidato > NUMERO_MAXIMO)
             {
-                MessageBox.Show("Perdio");
+                MessageBox.Show($"Debe escribir un numero entre {NUMERO_MINIMO} y {NUMERO_MAXIMO}");
+                return;
+            }
+
+            if (candidato == NumeroRandom)
+            {
+                var intentosRealizados = INTENTOS_MAXIMO - Intentos + 1;
+                MessageBox.Show($"Gano en {intentosRealizados} intentos");
+                return;
+            }
+            else if (candidato < NumeroRandom)
+            {
+                consejoLabel.Text = "Aumenta";
             }
             else
             {
-                int.TryParse(textBox1.Text, out int candidato);
-                if (candidato == NumeroRandom)
-                {
-                    MessageBox.Show("Gano");
-                }
-                else if (candidato < NumeroRandom)
-                {
-                    MessageBox.Show("Aumenta tu candidato");
-                }
-                else
-                {
-                    MessageBox.Show("Disminuye tu candidato");
-                }
+                consejoLabel.Text = "Disminuye";
             }
 
+            string resultado = $"{candidato}: {consejoLabel.Text}";
+            listBox1.Items.Add(resultado);
             Intentos--;
             RefrescarPantalla();
+            textBox1.Focus();
 
+            if (Intentos == 0)
+            {
+                MessageBox.Show("Has perdido el juego");
+                button1.Enabled = false;
+            }
         }
     }
 }
