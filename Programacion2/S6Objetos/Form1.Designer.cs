@@ -1,4 +1,4 @@
-﻿namespace S6Objetos
+﻿namespace S6GUI
 {
     partial class Form1
     {
@@ -23,113 +23,115 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            btnCrear = new Button();
-            lstAlumnos = new ListBox();
-            txtNombre = new TextBox();
-            txtCuenta = new TextBox();
-            txtCarrera = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            btnCrear = new System.Windows.Forms.Button();
+            LstAlumnos = new System.Windows.Forms.ListBox();
+            TxtNombre = new System.Windows.Forms.TextBox();
+            TxtCuenta = new System.Windows.Forms.TextBox();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            CmbCarrera = new System.Windows.Forms.ComboBox();
             SuspendLayout();
             // 
             // btnCrear
             // 
-            btnCrear.Location = new Point(18, 241);
+            btnCrear.Location = new System.Drawing.Point(18, 241);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(153, 23);
+            btnCrear.Size = new System.Drawing.Size(153, 31);
             btnCrear.TabIndex = 4;
             btnCrear.Text = "Crear alumno";
             btnCrear.UseVisualStyleBackColor = true;
             btnCrear.Click += btnCrear_Click;
             // 
-            // lstAlumnos
+            // LstAlumnos
             // 
-            lstAlumnos.FormattingEnabled = true;
-            lstAlumnos.ItemHeight = 15;
-            lstAlumnos.Location = new Point(339, 28);
-            lstAlumnos.Name = "lstAlumnos";
-            lstAlumnos.Size = new Size(400, 304);
-            lstAlumnos.TabIndex = 5;
+            LstAlumnos.FormattingEnabled = true;
+            LstAlumnos.Location = new System.Drawing.Point(339, 28);
+            LstAlumnos.Name = "LstAlumnos";
+            LstAlumnos.Size = new System.Drawing.Size(400, 304);
+            LstAlumnos.TabIndex = 5;
             // 
-            // txtNombre
+            // TxtNombre
             // 
-            txtNombre.Location = new Point(79, 101);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(238, 23);
-            txtNombre.TabIndex = 6;
+            TxtNombre.Location = new System.Drawing.Point(91, 101);
+            TxtNombre.Name = "TxtNombre";
+            TxtNombre.Size = new System.Drawing.Size(226, 27);
+            TxtNombre.TabIndex = 6;
             // 
-            // txtCuenta
+            // TxtCuenta
             // 
-            txtCuenta.Location = new Point(79, 145);
-            txtCuenta.Name = "txtCuenta";
-            txtCuenta.Size = new Size(238, 23);
-            txtCuenta.TabIndex = 7;
-            // 
-            // txtCarrera
-            // 
-            txtCarrera.Location = new Point(79, 188);
-            txtCarrera.Name = "txtCarrera";
-            txtCarrera.Size = new Size(238, 23);
-            txtCarrera.TabIndex = 8;
+            TxtCuenta.Location = new System.Drawing.Point(91, 145);
+            TxtCuenta.Name = "TxtCuenta";
+            TxtCuenta.Size = new System.Drawing.Size(226, 27);
+            TxtCuenta.TabIndex = 7;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(18, 106);
+            label1.Location = new System.Drawing.Point(18, 106);
             label1.Name = "label1";
-            label1.Size = new Size(54, 15);
+            label1.Size = new System.Drawing.Size(67, 20);
             label1.TabIndex = 9;
             label1.Text = "Nombre:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(18, 153);
+            label2.Location = new System.Drawing.Point(18, 153);
             label2.Name = "label2";
-            label2.Size = new Size(48, 15);
+            label2.Size = new System.Drawing.Size(58, 20);
             label2.TabIndex = 10;
             label2.Text = "Cuenta:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(18, 196);
+            label3.Location = new System.Drawing.Point(18, 196);
             label3.Name = "label3";
-            label3.Size = new Size(48, 15);
+            label3.Size = new System.Drawing.Size(60, 20);
             label3.TabIndex = 11;
             label3.Text = "Carrera:";
             // 
+            // CmbCarrera
+            // 
+            CmbCarrera.FormattingEnabled = true;
+            CmbCarrera.Items.AddRange(new object[] { "Arquitectura", "Matemáticas", "Ing. en Sistemas", "Ing. Civil", "Ing. Elétrica" });
+            CmbCarrera.Location = new System.Drawing.Point(91, 188);
+            CmbCarrera.Name = "CmbCarrera";
+            CmbCarrera.Size = new System.Drawing.Size(226, 28);
+            CmbCarrera.TabIndex = 12;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(CmbCarrera);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(txtCarrera);
-            Controls.Add(txtCuenta);
-            Controls.Add(txtNombre);
-            Controls.Add(lstAlumnos);
+            Controls.Add(TxtCuenta);
+            Controls.Add(TxtNombre);
+            Controls.Add(LstAlumnos);
             Controls.Add(btnCrear);
-            Name = "Form1";
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
         }
 
+        private System.Windows.Forms.ComboBox CmbCarrera;
+
         #endregion
-        private Button btnCrear;
-        private ListBox lstAlumnos;
-        private TextBox txtNombre;
-        private TextBox txtCuenta;
-        private TextBox txtCarrera;
+        private System.Windows.Forms.Button btnCrear;
+        private ListBox LstAlumnos;
+        private System.Windows.Forms.TextBox TxtNombre;
+        private System.Windows.Forms.TextBox TxtCuenta;
         private Label label1;
         private Label label2;
         private Label label3;

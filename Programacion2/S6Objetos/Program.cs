@@ -1,3 +1,5 @@
+using S6GUI;
+
 namespace S6Objetos
 {
     internal static class Program

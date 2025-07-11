@@ -42,7 +42,7 @@ namespace GUI
         }
 
         private void BtnAdivinaClick(object sender, EventArgs e)
-        {          
+        {
             int.TryParse(TxtNumero.Text, out int candidato);
 
             if (candidato < NUMERO_MINIMO || candidato > NUMERO_MAXIMO)

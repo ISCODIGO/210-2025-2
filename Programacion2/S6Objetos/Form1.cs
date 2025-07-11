@@ -1,6 +1,4 @@
-using S6GUI;
-
-namespace S6Objetos
+namespace S6GUI
 {
     public partial class Form1 : Form
     {
@@ -11,16 +9,14 @@ namespace S6Objetos
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            Alumno alumno = new Alumno(txtCuenta.Text, txtNombre.Text, txtCarrera.Text);
-            lstAlumnos.Items.Add(alumno.ToString());
-
-            alumno.Carrera = "Arquictura";
+            Alumno alumno = new Alumno(TxtCuenta.Text, TxtNombre.Text, CmbCarrera.SelectedItem?.ToString());
+            LstAlumnos.Items.Add(alumno.ToString());
 
             Console.WriteLine(alumno.Carrera);
 
-            txtCarrera.Text = string.Empty;
-            txtCuenta.Text = string.Empty;
-            txtNombre.Text = string.Empty;
+            CmbCarrera.SelectedIndex = -1;
+            TxtCuenta.Text = string.Empty;
+            TxtNombre.Text = string.Empty;
         }
     }
 }

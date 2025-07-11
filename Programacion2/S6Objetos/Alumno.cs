@@ -12,11 +12,11 @@ namespace S6GUI
         // atributos
         string cuenta;
         string nombre;
-        string carrera;
+        string? carrera;
         DateOnly fechaIngreso;
 
         // propiedades
-        public string Carrera
+        public string? Carrera
         {
             get {  return carrera; }
             set { carrera = value; }
@@ -29,7 +29,7 @@ namespace S6GUI
         // 4. Destructor
         // 5. Auxiliares
 
-        public Alumno(string cuenta, string nombre, string carrera)
+        public Alumno(string cuenta, string nombre, string? carrera)
         {
             this.cuenta = cuenta;
             this.nombre = nombre;
@@ -45,7 +45,7 @@ namespace S6GUI
         }
 
         // Setter
-        public void SetCarrera(string carrera)
+        public void SetCarrera(string? carrera)
         {
             this.carrera = carrera;
         }
