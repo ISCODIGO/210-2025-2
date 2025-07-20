@@ -5,8 +5,11 @@
         Console.WriteLine("probando codigo...");
         try
         {
+            Random d= new Random();
+            d.n
+
             string fileName = "WrongFileName.txt";
-        ReadFile(fileName);
+            ReadFile(fileName);
         }
 
         catch (Exception e)

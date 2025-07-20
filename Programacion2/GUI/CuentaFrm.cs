@@ -58,6 +58,14 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message);
             }
+            catch (SaldoInsuficienteException se)
+            {
+                MessageBox.Show(se.Message, "El monto excede el saldo");
+            }
+            catch(LimiteExcedidoException le)
+            {
+                MessageBox.Show(le.Message, $"Limite es {Cuenta.LIMITE_RETIRO}");
+            }
             RefrescarDatos();
         }
 

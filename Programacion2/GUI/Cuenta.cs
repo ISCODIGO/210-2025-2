@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GUI;
 
 namespace S7
 {
@@ -45,12 +46,12 @@ namespace S7
 
             if (monto > Saldo)
             {
-                throw new ArgumentException("Saldo insuficiente");
+                throw new SaldoInsuficienteException("Saldo insuficiente");
             }
 
             if (monto > LIMITE_RETIRO)
             {
-                throw new ArgumentException($"No puede superar el limite: L{LIMITE_RETIRO}");
+                throw new LimiteExcedidoException(LIMITE_RETIRO);
             }
 
             if (monto % 100 != 0)
@@ -70,7 +71,7 @@ namespace S7
 
             if (monto > LIMITE_DEPOSITO)
             {
-                throw new ArgumentException($"No puede superar el limite: {LIMITE_DEPOSITO}");
+                throw new LimiteExcedidoException();
             }
 
             Saldo += monto;
