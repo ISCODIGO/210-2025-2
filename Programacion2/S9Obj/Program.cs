@@ -26,9 +26,30 @@ public class Program
         Personaje arquero = new Personaje(1750, 1750);
 
         Console.WriteLine("Def arquero: " + arquero.Defensa);
+
+        Console.WriteLine("Mago ataca a Arquero");
         mago.Atacar(arquero);
         Console.WriteLine(mago);
         Console.WriteLine(arquero);
+        Console.WriteLine("------------------");
+
+        Console.WriteLine("Arquero ataca a Mago");
+        arquero.Atacar(mago);
+        Console.WriteLine(mago);
+        Console.WriteLine(arquero);
+        Console.WriteLine("------------------");
+
+        Console.WriteLine("Mago ataca a Arquero");
+        mago.Atacar(arquero);
+        Console.WriteLine(mago);
+        Console.WriteLine(arquero);
+        Console.WriteLine("------------------");
+
+        Console.WriteLine("Arquero ataca a Mago");
+        arquero.Atacar(mago);
+        Console.WriteLine(mago);
+        Console.WriteLine(arquero);
+        Console.WriteLine("------------------");
         #endregion
     }
 }

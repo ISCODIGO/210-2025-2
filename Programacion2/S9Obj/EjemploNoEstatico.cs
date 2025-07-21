@@ -49,7 +49,7 @@ namespace S9Obj
                 (int)porcentajeMax + 1
             );
 
-            Console.WriteLine("Perdida " + perdida);
+            Console.WriteLine("*** Perdida " + perdida);
             return perdida;
         }
 

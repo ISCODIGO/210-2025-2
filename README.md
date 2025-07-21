@@ -26,3 +26,21 @@ Descripción: Ejercicios de lógica y resolución de problemas complejos.
 ### Semana 6
 **Proyectos:** S6Metodos, S6Objetos  
 Descripción: Introducción a métodos y programación orientada a objetos en C#.
+
+### Semana 7
+**Proyectos:** S7  
+Descripción: Práctica de clases, objetos y encapsulamiento.
+
+### Semana 8
+**Proyectos:** S8P1, S8P2  
+Descripción: Ejercicios de herencia y polimorfismo en C#.
+
+### Semana 9
+**Proyectos:** S9_Ex12_7, S9bubbleup, S9Pauta1_2, S9Obj  
+Descripción: Ejercicios de repaso, manejo de excepciones y ejemplos de clases estáticas y no estáticas.
+
+---
+
+## Licencia
+
+Este repositorio está bajo la licencia MIT.
